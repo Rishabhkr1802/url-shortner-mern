@@ -1,22 +1,25 @@
 import mongoose from "mongoose";
 
-const urlSchema = mongoose.Schema({
+const UrlSchema = mongoose.Schema({
         name: {
-            type: String,
+            type    : String,
         },
         short_url: {
             type    : String,
             required: true,
             unique  : true,
+            index   : 0,
         },
         full_url: {
             type    : String,
             required: true,
         },
         click: {
-            type: Number
+            type    : Number,
+            required: true,
+            default : 0,
         }
     }, { timestamps: true });
 
-const Url = mongoose.model("Url", urlSchema);
+const Url = mongoose.model("Url", UrlSchema);
 export default Url;
