@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-// const url = NODE_ENV = development ? import.meta.env.VITE_SERVER_URL : "api/v1";
-const url = import.meta.env.VITE_SERVER_URL;
+const baseUrl = import.meta.env.MODE === "development" ? import.meta.env.VITE_SERVER_URL : "";
 
 function App() {
   const [longUrl, setLongUrl]    = useState('');
@@ -17,7 +16,7 @@ function App() {
     setShortUrl('');
 
     try {
-      const res = await fetch(`${url}/api/v1/create`, {
+      const res = await fetch(`${baseUrl}/api/v1/create`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: longUrl }),
