@@ -1,9 +1,7 @@
 import mongoose from "mongoose";
 
 const UrlSchema = mongoose.Schema({
-        name: {
-            type    : String,
-        },
+        name: { type : String },
         short_url: {
             type    : String,
             required: true,
@@ -14,7 +12,7 @@ const UrlSchema = mongoose.Schema({
             type    : String,
             required: true,
         },
-        click: {
+        clicks: {
             type    : Number,
             required: true,
             default : 0,
@@ -22,4 +20,5 @@ const UrlSchema = mongoose.Schema({
     }, { timestamps: true });
 
 const Url = mongoose.model("Url", UrlSchema);
+
 export default Url;
