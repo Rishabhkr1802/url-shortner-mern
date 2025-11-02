@@ -12,8 +12,9 @@ export async function createShortUrl(req, res) {
         const newUrl = await shortUrlServiceWithoutUser(url, id);
         if (!newUrl) return res.status(404).json({ success: false, message: "Unable to create short URL." })
                 
-        const baseUrl = process.env.BASEURL;
-        res.status(201).json({ success: true, message: "Short url has created successfully.", shortUrl: `${baseUrl}${newUrl?.short_url}` })
+        // const baseUrl = process.env.BASEURL;
+        const baseUrl = `${req.protocol}://${req.get("host")}`;
+        res.status(201).json({ success: true, message: "Short url has created successfully.", shortUrl: `${baseUrl}/${newUrl?.short_url}` })
 
     } catch (error) {
         console.log("Error occuring inside createShortUrl Controller : ", error);
