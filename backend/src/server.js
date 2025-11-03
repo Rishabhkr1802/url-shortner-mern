@@ -16,9 +16,9 @@ dotenv.config({
 const port = process.env.PORT;
 const app  = express();
 
-const __filename = fileURLToPath(import.meta.url);  // For Deployment
-const __dirname = path.dirname(__filename);        // For Deployment
-// const __dirname = path.resolve();              // For Deployment
+const __filename = fileURLToPath(import.meta.url);               // For Deployment
+const __dirname = path.resolve(path.dirname(__filename));        // For Deployment
+// const __dirname = path.resolve();                             // For Deployment
 
 app.use(cors({
     origin: ['http://localhost:3000','http://192.168.0.101:3000'],
