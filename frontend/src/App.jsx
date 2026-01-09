@@ -45,7 +45,7 @@ function App() {
   };
 
   return (
-    <div className="w-100 vh-100 container-fluid py-5 bg-dark">
+    <div className="w-100 vh-100 container-fluid py-5 bg-light">
       <div className="row justify-content-center">
         <div className="col-xl-5 col-lg-8 col-md-10 col-sm-10">
           <div className="card shadow-lg rounded p-4">
@@ -85,7 +85,7 @@ function App() {
         </div>
       </div>
 
-      <footer className="text-light position-absolute bottom-0 start-50 translate-middle-x mb-4">Design & Developed by Rishabh Kumar</footer>
+      <footer className="position-absolute bottom-0 text-center w-100  mb-4">Design & Developed by <strong>Rishabh Kumar</strong></footer>
 
     </div>
     
